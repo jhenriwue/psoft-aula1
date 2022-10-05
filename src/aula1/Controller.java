@@ -5,11 +5,11 @@ public class Controller {
 	public Controller() {
 		s = new Services();
 	}
-	public Produto criarProduto(String nome, String fabricante, double preco) {
-		return s.criarProduto(nome, fabricante, preco);
+	public void criarProduto(String nome, String fabricante, double preco) {
+		s.criarProduto(nome, fabricante, preco);
 	}
-	public Lote criarLote(Produto p, int qtd, String dataV) {
-		return s.criarLote(p, qtd, dataV);
+	public void criarLote(Produto p, int qtd, String dataV) {
+		s.criarLote(p, qtd, dataV);
 	}
 	public String getLotes() {
 		return s.getLote();

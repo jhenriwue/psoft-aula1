@@ -1,21 +1,17 @@
 package aula1;
 
 public class Services {
-	Lote l;
-	Produto p;
-	LoteRepository lr;
-	ProdutoRepository pr;
+	LoteRepository lr = new LoteRepository();
+	ProdutoRepository pr = new ProdutoRepository();
 	public Services(){
 	}
-	public Produto criarProduto(String nome, String fabricante, double preco) {
-		this.p = new Produto(nome, fabricante, preco);
-		this.pr = new ProdutoRepository(p);
-		return p;
+	public void criarProduto(String nome, String fabricante, double preco) {
+		Produto p = new Produto(nome, fabricante, preco);
+		pr.addSet(p);
 	}
-	public Lote criarLote(Produto p, int qtd, String dataV) {
-		this.l = new Lote(p, qtd, dataV);
-		this.lr = new LoteRepository(l);
-		return l;
+	public void criarLote(Produto p, int qtd, String dataV) {
+		Lote l = new Lote(p, qtd, dataV);
+		lr.addMapa(l.hashCode(), l);
 	}
 	public String getLote() {
 		String retorno = "";
