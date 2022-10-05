@@ -1,17 +1,11 @@
 package aula1;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-
 public class Lote {
 	private int qtd;
 	private String dataV;
-	Produto prod;
-	HashMap<Produto, String> lista;
+	Produto p;
 	public Lote(Produto p, int qtd, String dataV) {
-		lista =  new HashMap<>();
-		lista.put(p, dataV);
-		this.prod = p;
+		this.p = p;
 		this.dataV = dataV;
 		this.qtd = qtd;
 	}
@@ -28,15 +22,9 @@ public class Lote {
 		this.dataV = dataV;
 	}
 	public Produto getProd() {
-		return prod;
+		return p;
 	}
 	public void setProd(Produto prod) {
-		this.prod = prod;
-	}
-	public String getLista(){
-		for (Produto prod : lista.keySet()) {
-			return prod.getNome() + "|" + prod.getFabricante() + "|R$" + prod.getPreco();
-		}
-		return null;
+		this.p = prod;
 	}
 }
